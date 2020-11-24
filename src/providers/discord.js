@@ -11,12 +11,7 @@ export default (options) => {
       'https://discord.com/api/oauth2/authorize?response_type=code&prompt=none',
     profileUrl: 'https://discord.com/api/users/@me',
     profile: (profile) => {
-      return {
-        id: profile.id,
-        name: profile.username,
-        image: `https://cdn.discordapp.com/avatars/${profile.id}/${profile.avatar}.png`,
-        email: profile.email
-      }
+      return profile
     },
     ...options
   }
