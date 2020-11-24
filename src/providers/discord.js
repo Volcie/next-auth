@@ -4,7 +4,7 @@ export default (options) => {
     name: 'Discord',
     type: 'oauth',
     version: '2.0',
-    scope: 'identify email',
+    scope: Array.isArray(options.scope) ? options.scope.split(" ") : options.scope,
     params: { grant_type: 'authorization_code' },
     accessTokenUrl: 'https://discord.com/api/oauth2/token',
     authorizationUrl:
